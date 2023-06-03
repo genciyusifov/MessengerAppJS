@@ -1,0 +1,205 @@
+/* Add your custom styles here */
+
+/* General styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile chat container */
+.mobileChat {
+  background: #fcfcfc;
+  height: 80vh;
+  width: 60%;
+  margin: 60px auto;
+  border-radius: 30px;
+  position: relative;
+  box-shadow: 0 0 15px rgb(109, 107, 107);
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+/* Date and username section */
+.date {
+  padding: 0 0 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.date .clock {
+  font-size: 18px;
+}
+
+.date #username {
+  font-size: 16px;
+}
+
+/* Header section */
+.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.name div {
+  font-size: 24px;
+}
+
+.name .iconsHead {
+  display: flex;
+  align-items: center;
+}
+
+.name .iconsHead a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.name .iconsHead a i {
+  margin-left: 10px;
+}
+
+/* Chat section */
+.chat {
+  padding: 20px;
+  height: calc(60vh - 10px);
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: gray;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.received .avatar {
+  margin-right: 10px;
+}
+
+.sent {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sent .avatar {
+  margin-left: 10px;
+}
+
+.content {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* Input section */
+.input {
+  display: flex;
+  padding: 5px;
+  background-color: #f5f5f5;
+}
+
+.input input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+}
+
+.input button {
+  margin-left: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.input button i {
+  font-size: 20px;
+}
+
+.avatar-img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Contact list section */
+.pageTwo {
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.contactInfo {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  background-color: rgb(205, 255, 238);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.contactInfo img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.contactDetails {
+  font-size: 14px;
+}
+
+.contactDetails h3,
+.contactDetails p {
+  margin: 0;
+}
+
+/* Page switching */
+.pages {
+  display: flex;
+}
+
+.pageOne {
+  width: 100%;
+}
+
+.pageTwo {
+  display: none;
+}
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+.avatar img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}

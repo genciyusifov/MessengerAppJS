@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/login.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+          <form id="register-form" class="register-form">
+            <input type="text" placeholder="Username" name="username" />
+            <input type="number" placeholder="Phone number" name="phoneNumber"/>
+            <input type="password" placeholder="Password" name="password"/>
+            <input type="file" name="image" />
+            <button>create</button>
+            <p class="message">Already registered? <a href="#">Sign In</a></p>
+          </form>
+          <form id="login-form"  class="login-form">
+            <input type="number" placeholder="Phone number" name="phoneNumber" />
+            <input type="password" placeholder="Password" name="password"/>
+            <button>login</button>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+          </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script defer src="JS/login.js"></script>
+</body>
+</html>

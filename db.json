@@ -1,0 +1,69 @@
+{
+  "messages": [
+    {
+      "text": "sadsad",
+      "userId": 1,
+      "createdAt": "Sat Jun 03 2023 23:33:06 GMT+0400 (Azerbaycan Standart Saati)",
+      "updatedAt": "Sat Jun 03 2023 23:33:06 GMT+0400 (Azerbaycan Standart Saati)",
+      "id": 1
+    },
+    {
+      "text": "dsfdsfds",
+      "userId": 1,
+      "createdAt": "Sat Jun 03 2023 23:33:12 GMT+0400 (Azerbaycan Standart Saati)",
+      "updatedAt": "Sat Jun 03 2023 23:33:12 GMT+0400 (Azerbaycan Standart Saati)",
+      "id": 2
+    },
+    {
+      "text": "sd",
+      "userId": 1,
+      "createdAt": "Sat Jun 03 2023 23:33:18 GMT+0400 (Azerbaycan Standart Saati)",
+      "updatedAt": "Sat Jun 03 2023 23:33:18 GMT+0400 (Azerbaycan Standart Saati)",
+      "id": 3
+    },
+    {
+      "text": "dsfsdfs",
+      "userId": 1,
+      "createdAt": "Sat Jun 03 2023 23:33:22 GMT+0400 (Azerbaycan Standart Saati)",
+      "updatedAt": "Sat Jun 03 2023 23:33:22 GMT+0400 (Azerbaycan Standart Saati)",
+      "id": 4
+    },
+    {
+      "text": "saldsksd",
+      "userId": 2,
+      "createdAt": "Sat Jun 03 2023 23:34:24 GMT+0400 (Azerbaycan Standart Saati)",
+      "updatedAt": "Sat Jun 03 2023 23:34:24 GMT+0400 (Azerbaycan Standart Saati)",
+      "id": 5
+    },
+    {
+      "text": "sadsadas",
+      "userId": 2,
+      "createdAt": "Sat Jun 03 2023 23:34:32 GMT+0400 (Azerbaycan Standart Saati)",
+      "updatedAt": "Sat Jun 03 2023 23:34:32 GMT+0400 (Azerbaycan Standart Saati)",
+      "id": 6
+    },
+    {
+      "text": "sdsddvs",
+      "userId": 2,
+      "createdAt": "Sat Jun 03 2023 23:34:36 GMT+0400 (Azerbaycan Standart Saati)",
+      "updatedAt": "Sat Jun 03 2023 23:34:36 GMT+0400 (Azerbaycan Standart Saati)",
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "username": "ganji@div.edu.az",
+      "phoneNumber": "0557741606",
+      "password": "west5566",
+      "image": "",
+      "id": 1
+    },
+    {
+      "username": "yusifovgenci91@gmail.com",
+      "phoneNumber": "55555",
+      "password": "1234567",
+      "image": "",
+      "id": 2
+    }
+  ]
+}

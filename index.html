@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <!-- <link rel="stylesheet" href="CSS/message.css" /> -->
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  
+<body>
+  
+  <div class="mobileChat">
+    <div class="date">
+      <div class="clock">
+        <script>document.write(moment(new Date()).format("hh:mm"))</script>
+      </div>
+      <div id="username"></div>
+    </div>
+    <div class="name">
+      <div id="back"><i class="fa-solid fa-arrow-left-long"></i></div>
+      <div id="pageName">Messages</div>
+      <div class="iconsHead">
+        <a href="login.html">Exit<i class="fas fa-sign-out"></i></a>
+      </i>
+    </div>
+    </div>
+    <div class="pages">
+      <div class="pageOne">
+        <div id="chat" class="chat">
+          
+        </div>
+        <form id="chat-form" class="input">
+          <input type="text" name="text" placeholder="Type your message">
+          <button><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+      <div class="pageTwo">
+        <div class="contactList">
+          
+        </div>
+        <div id="mobile">
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script defer src="JS/main.js"></script>
+  <script>
+    const back = document.getElementById("back");
+    const one = document.querySelector(".pageOne");
+    const two = document.querySelector(".pageTwo");
+    const name = document.getElementById("pageName");
+    const add = document.querySelector(".contactList")
+
+    const person = [
+      {
+        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+        name: 'Togrul',
+        description: "Sagol "
+      },
+      {
+        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+        name: 'Togrul',
+        description: "Sagol "
+      },
+      {
+        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+        name: 'Togrul',
+        description: "Sagol "
+      },
+      {
+        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+        name: 'Ganji',
+        description: "Sagol "
+      },
+      {
+        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+        name: 'Ganji',
+        description: "Sagol "
+      },
+      {
+        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+        name: 'Ganji',
+        description: "Sagol "
+      },
+      {
+        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+        name: 'Ganji',
+        description: "Sagol "
+      },
+      {
+        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+        name: 'Ganji',
+        description: "Sagol "
+      },
+      {
+        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+        name: 'Asgar',
+        description: "Sagol "
+      },
+      {
+        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+        name: 'Asgar',
+        description: "Sagol "
+      },
+      {
+        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+        name: 'Asgar',
+        description: "Sagol "
+      }
+
+
+    ]
+
+    add.innerHTML = person.map(item => `  <div class="contactInfo">
+              <img src="${item.img}" alt="Avatar" class="avatar-img">
+              <div class="contactDetails">
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+              </div>
+            </div>`).join("")
+
+
+
+
+    back.onclick = function () {
+      one.classList.toggle("none");
+      two.classList.toggle("block");
+      if (one.classList.contains("none")) {
+        name.innerHTML = "Contacts";
+      } else {
+        name.innerHTML = "Messages";
+      }
+      back.style.display = "none"
+    };
+
+
+
+  </script>
+</body>
+
+</html>

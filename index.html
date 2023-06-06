@@ -61,73 +61,73 @@
     const name = document.getElementById("pageName");
     const add = document.querySelector(".contactList")
 
-    const person = [
-      {
-        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
-        name: 'Togrul',
-        description: "Sagol "
-      },
-      {
-        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
-        name: 'Togrul',
-        description: "Sagol "
-      },
-      {
-        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
-        name: 'Togrul',
-        description: "Sagol "
-      },
-      {
-        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
-        name: 'Ganji',
-        description: "Sagol "
-      },
-      {
-        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
-        name: 'Ganji',
-        description: "Sagol "
-      },
-      {
-        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
-        name: 'Ganji',
-        description: "Sagol "
-      },
-      {
-        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
-        name: 'Ganji',
-        description: "Sagol "
-      },
-      {
-        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
-        name: 'Ganji',
-        description: "Sagol "
-      },
-      {
-        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
-        name: 'Asgar',
-        description: "Sagol "
-      },
-      {
-        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
-        name: 'Asgar',
-        description: "Sagol "
-      },
-      {
-        img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
-        name: 'Asgar',
-        description: "Sagol "
-      }
+    // const person = [
+    //   {
+    //     img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+    //     name: 'Togrul',
+    //     description: "Sagol "
+    //   },
+    //   {
+    //     img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+    //     name: 'Togrul',
+    //     description: "Sagol "
+    //   },
+    //   {
+    //     img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+    //     name: 'Togrul',
+    //     description: "Sagol "
+    //   },
+    //   {
+    //     img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+    //     name: 'Ganji',
+    //     description: "Sagol "
+    //   },
+    //   {
+    //     img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+    //     name: 'Ganji',
+    //     description: "Sagol "
+    //   },
+    //   {
+    //     img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+    //     name: 'Ganji',
+    //     description: "Sagol "
+    //   },
+    //   {
+    //     img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+    //     name: 'Ganji',
+    //     description: "Sagol "
+    //   },
+    //   {
+    //     img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+    //     name: 'Ganji',
+    //     description: "Sagol "
+    //   },
+    //   {
+    //     img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+    //     name: 'Asgar',
+    //     description: "Sagol "
+    //   },
+    //   {
+    //     img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+    //     name: 'Asgar',
+    //     description: "Sagol "
+    //   },
+    //   {
+    //     img: "https://media.vanityfair.com/photos/6319eab06009e759e6638e28/master/w_2560%2Cc_limit/1421315651",
+    //     name: 'Asgar',
+    //     description: "Sagol "
+    //   }
 
 
-    ]
+    // ]
 
-    add.innerHTML = person.map(item => `  <div class="contactInfo">
-              <img src="${item.img}" alt="Avatar" class="avatar-img">
-              <div class="contactDetails">
-                <h3>${item.name}</h3>
-                <p>${item.description}</p>
-              </div>
-            </div>`).join("")
+    // add.innerHTML = person.map(item => `  <div class="contactInfo">
+    //           <img src="${item.img}" alt="Avatar" class="avatar-img">
+    //           <div class="contactDetails">
+    //             <h3>${item.name}</h3>
+    //             <p>${item.description}</p>
+    //           </div>
+    //         </div>`).join("")
 
 
 

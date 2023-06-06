@@ -1,14 +1,20 @@
 const API_URL = "http://localhost:3000";
 const registerFormEl = document.querySelector("#register-form");
-registerFormEl.addEventListener("submit", function (e) {
+registerFormEl.addEventListener("submit", async function (e) {
   e.preventDefault();
   const formEl = e.target;
   const data = {
     username: formEl.username.value.trim(),
     phoneNumber: formEl.phoneNumber.value.trim(),
     password: formEl.password.value.trim(),
-    image : formEl.image.value
+    image: null,
   };
+
+  const fileInput = formEl.querySelector('input[type="file"]');
+  if (fileInput.files && fileInput.files.length > 0) {
+    const file = fileInput.files[0];
+    data.image = await readFileAsDataURL(file);
+  }
   registerUser(data);
 });
 async function registerUser(data) {
@@ -32,6 +38,17 @@ async function registerUser(data) {
     alert("Succesfully registerd")
   }
 }
+
+function readFileAsDataURL(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      resolve(reader.result);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
 const loginFormEl = document.querySelector("#login-form");
 loginFormEl.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -42,6 +59,7 @@ loginFormEl.addEventListener("submit", function (e) {
   };
   loginUser(data);
 });
+
 async function loginUser(data) {
   const { phoneNumber, password } = data;
   if (password.length < 7) {

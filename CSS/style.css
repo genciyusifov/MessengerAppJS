@@ -17,6 +17,7 @@ body {
   height: 80vh;
   width: 60%;
   margin: 60px auto;
+  border: 6px solid #f5f5f5;
   border-radius: 30px;
   position: relative;
   box-shadow: 0 0 15px rgb(109, 107, 107);
@@ -32,11 +33,11 @@ body {
   justify-content: space-around;
   width: 100%;
   font-weight: 600;
-  font-size: 13px;
+  /* font-size: 11px; */
 }
 
 .date .clock {
-  font-size: 18px;
+  font-size: 12px;
 }
 
 .date #username {
@@ -48,18 +49,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px 10px;
   background-color: #f5f5f5;
   font-weight: 600;
 }
 
 .name div {
-  font-size: 24px;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
 .name .iconsHead {
   display: flex;
   align-items: center;
+  font-size: 14px;
 }
 
 .name .iconsHead a {
@@ -77,9 +80,11 @@ body {
 .chat {
   padding: 20px;
   height: calc(60vh - 10px);
+  border-radius: 10px;
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: gray;
+  background: url("https://i.pinimg.com/736x/d2/bf/d3/d2bfd3ea45910c01255ae022181148c4.jpg") center/cover;
 }
 
 .message {

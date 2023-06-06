@@ -1,19 +1,22 @@
-const API_URL ="http://localhost:3000";
-function getRandomNumberBetween(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+const API_URL = "http://localhost:3000";
+// function getRandomNumberBetween(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1) + min);
+// }
+
 const usernameEl = document.querySelector("#username");
 async function getUser() {
   const userId = localStorage.getItem("userId");
   const req = await fetch(`${API_URL}/users?id=${userId}`);
   const response = await req.json();
   const user = response[0];
+
+  console.log(user);
   return user;
 }
 async function main() {
   const user = await getUser();
   if (!user) {
-    window.location.href = "/login";
+    window.location.href = "/login.html";
   } else {
     window.user = user;
   }
@@ -21,6 +24,7 @@ async function main() {
 }
 main();
 const chatEl = document.querySelector("#chat");
+const contactEl = document.querySelector(".contactList");
 const chatFormEl = document.querySelector("#chat-form");
 class MessageCtrl {
   constructor({
@@ -28,24 +32,25 @@ class MessageCtrl {
     updatedAt = new Date(),
     text = "",
     userObj,
-  
   }) {
     this.createdAt = new Date(createdAt.toString());
     this.updatedAt = new Date(updatedAt.toString());
     this.text = text;
     this.userObj = userObj;
-
-    this.isSender = user.id===this.userObj.id;
+    this.isSender = user.id === this.userObj.id;
+    this.image = userObj.image; 
   }
   get PPURL() {
     let image = "";
-    if (this.isSender) {
-      image = this.userObj.image ;
-    } else {
-      image = "received" ;
-    }
-    return image ;
+      image = this.userObj.image;
+    return  image;
   }
+  
+  // get PPURL() {
+  //   const person = getRandomNumberBetween(1, 30);
+  //   return `https://xsgames.co/randomusers/assets/avatars/male/${person}.jpg`;
+  // }
+
   get diffClass() {
     let myClass = "";
     if (this.isSender) {
@@ -69,6 +74,7 @@ class MessageCtrl {
     let result = "";
     if (this.isSender) {
       result = "You";
+      // result.style.color = "white"
     } else result = this.userObj.username;
     return result;
   }
@@ -78,8 +84,8 @@ class MessageCtrl {
        
           <div class="avatar"><img class="rounded-full object-cover" src="${this.PPURL}" alt="Avatar"></div>
           <div>
-            <p class="author font-semibold">${this.name}</p>
-            <div class="content">
+            <p class="author font-semibold" style="color:white;">${this.name}</p>
+            <div class="content" style="width: 100px">
               <div class="text">${this.text}</div>
               <div class="metadata">
                 <div class="time font-bold">${this.formatDate}</div>
@@ -93,11 +99,13 @@ class MessageCtrl {
         `;
   }
 }
+
 class UserCtrl {
-  constructor({ username = "", phone = "", id = 0 }) {
+  constructor({ username = "", phone = "", id = 0,image }) {
     this.username = username;
     this.phone = phone;
     this.id = id;
+    this.image = image
   }
 }
 async function getMessages() {
@@ -110,24 +118,25 @@ async function getUserById(id) {
   const req = await fetch(`${API_URL}/users?id=${id}`);
   const response = await req.json();
   const user = response[0];
+  console.log(user);
   return user;
 }
 
 async function renderMessages() {
-  chatEl.innerHTML=""
+  chatEl.innerHTML = ""
   let messages = await getMessages();
-  
+
   let newMessages = [];
   for (let index = 0; index < messages.length; index++) {
     const message = messages[index];
     const user = await getUserById(message.userId);
-    const newMessage=new MessageCtrl({ ...message, userObj: new UserCtrl(user) })
+    const newMessage = new MessageCtrl({ ...message, userObj: new UserCtrl(user), image: user.image });
     newMessages.push(newMessage);
   }
 
-  newMessages.sort((b,a)=>{
-    console.log("a",a)
-    return a.createdAt.getTime()>b.createdAt.getTime()
+  newMessages.sort((b, a) => {
+    // console.log("a", a)
+    return a.createdAt.getTime() > b.createdAt.getTime()
   }).map((message) => {
     renderNewMessage(message)
   });
@@ -150,16 +159,29 @@ function addMessage({ text }) {
     }
   );
 }
-function renderNewMessage(message){
-  message=new MessageCtrl(message)
+function renderNewMessage(message) {
+  message = new MessageCtrl(message)
+  // console.log(message);
   chatEl.innerHTML += message.render;
+  contactEl.innerHTML += `<div class="contactInfo">
+  <img src="https://media.licdn.com/dms/image/C4D03AQHiAdL9ivyMLA/profile-displayphoto-shrink_400_400/0/1640097147801?e=1687996800&v=beta&t=zuvHBqsRLGkPZ13_KRnlkd78ahVuAK4dFmwdC376EEU" alt="Avatar" class="avatar-img">
+  <div class="contactDetails">
+    <h3>${message.userObj.username}</h3>
+    <p>${message.text}</p>
+  </div>
+</div>`
+
 }
 chatFormEl.addEventListener("submit", async (e) => {
   const formEl = e.target;
   e.preventDefault();
-  const req=await addMessage({
+  const req = addMessage({
     text: formEl.text.value.trim(),
   });
-  const newMessage=await req.json()
+  const newMessage = await req.json()
   renderNewMessage(newMessage)
 });
+    
+
+
+

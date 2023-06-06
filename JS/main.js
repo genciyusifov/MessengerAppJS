@@ -82,10 +82,10 @@ class MessageCtrl {
     return /*html*/ `
         <div class="message  ${this.diffClass} flex flex-row">
        
-          <div class="avatar"><img class="rounded-full object-cover" src="${this.PPURL}" alt="Avatar"></div>
+          <div class="avatar"><img style="min-width:60px"src="${this.PPURL}" alt="Avatar"></div>
           <div>
             <p class="author font-semibold" style="color:white;">${this.name}</p>
-            <div class="content" style="width: 100px">
+            <div class="content">
               <div class="text">${this.text}</div>
               <div class="metadata">
                 <div class="time font-bold">${this.formatDate}</div>
@@ -161,10 +161,9 @@ function addMessage({ text }) {
 }
 function renderNewMessage(message) {
   message = new MessageCtrl(message)
-  // console.log(message);
   chatEl.innerHTML += message.render;
   contactEl.innerHTML += `<div class="contactInfo">
-  <img src="https://media.licdn.com/dms/image/C4D03AQHiAdL9ivyMLA/profile-displayphoto-shrink_400_400/0/1640097147801?e=1687996800&v=beta&t=zuvHBqsRLGkPZ13_KRnlkd78ahVuAK4dFmwdC376EEU" alt="Avatar" class="avatar-img">
+  <img src="${this.PPURL}">
   <div class="contactDetails">
     <h3>${message.userObj.username}</h3>
     <p>${message.text}</p>

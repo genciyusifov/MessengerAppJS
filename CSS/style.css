@@ -208,3 +208,11 @@ body {
   height: 60px;
   border-radius: 50%;
 }
+.sent{
+  flex-direction: row-reverse !important;
+  align-items: center;
+  justify-content: end;
+}
+.sent p{
+text-align: end;
+}

@@ -143,7 +143,7 @@ async function renderMessages() {
 }
 renderMessages();
 function addMessage({ text }) {
-  const req = fetch(
+  const req  = fetch(
     "http://localhost:3000/messages",
     {
       method: "POST",

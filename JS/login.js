@@ -1,3 +1,4 @@
+
 const API_URL = "http://localhost:3000";
 const registerFormEl = document.querySelector("#register-form");
 registerFormEl.addEventListener("submit", async function (e) {
@@ -21,11 +22,11 @@ async function registerUser(data) {
   console.log(data);
   const { username, phoneNumber, password } = data;
   if (username.length < 1) {
-    alert("Enter username");
+    alert("İstifadəçi adı qısadı");
   } else if (password.length < 7) {
-    alert("Password must be higer than 7");
+    alert("Şifrə 7 simvoldan ibarət olmalıdır");
   } else if (phoneNumber.length < 4) {
-    alert("Phone number must be higher than 4");
+    alert("Telefon nömrəsi 4 dən azdı");
   } else {
     const req = await fetch(`${API_URL}/users`, {
       method: "POST",
@@ -35,7 +36,7 @@ async function registerUser(data) {
       },
     });
     const response = await req.json();
-    alert("Succesfully registerd")
+    alert("Uğurlu Qeydiyyat !")
   }
 }
 

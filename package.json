@@ -1,0 +1,22 @@
+{
+  "name": "messengerappjs",
+  "version": "1.0.0",
+  "description": "Messenger App JS",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "json-server": "^0.16.3"
+  },
+  "scripts": {
+    "start": "json-server --watch db.json --port $PORT"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/genciyusifov/MessengerAppJS.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/genciyusifov/MessengerAppJS/issues"
+  },
+  "homepage": "https://github.com/genciyusifov/MessengerAppJS#readme"
+}

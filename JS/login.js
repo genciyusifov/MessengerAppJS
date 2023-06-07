@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://limitless-dawn-20327.herokuapp.com/";
 const registerFormEl = document.querySelector("#register-form");
 registerFormEl.addEventListener("submit", async function (e) {
   e.preventDefault();

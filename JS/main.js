@@ -1,6 +1,6 @@
 
 
-const API_URL = "http://localhost:3000"
+const API_URL = "https://limitless-dawn-20327.herokuapp.com/"
 // function getRandomNumberBetween(min, max) {
 //   return Math.floor(Math.random() * (max - min + 1) + min);
 // }

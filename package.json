@@ -2,7 +2,7 @@
   "name": "messengerappjs",
   "version": "1.0.0",
   "description": "Messenger App JS",
-  "main": "index.js",
+  "main": "main.js",
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.18.2",

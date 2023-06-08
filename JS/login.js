@@ -81,6 +81,39 @@ async function loginUser(data) {
     }
   }
 }
-$(".message a").click(function () {
-  $("form").animate({ height: "toggle", opacity: "toggle" }, "slow");
+
+// Login JS Anim
+document.addEventListener("DOMContentLoaded", function() {
+  var messageLink = document.querySelector(".message a");
+  var form = document.querySelector("form");
+  
+  messageLink.addEventListener("click", function() {
+    toggleFormVisibility(form);
+  });
 });
+
+function toggleFormVisibility(form) {
+  var currentHeight = form.offsetHeight;
+  var targetHeight = currentHeight === 0 ? form.scrollHeight : 0;
+  var currentOpacity = parseFloat(getComputedStyle(form).opacity);
+  var targetOpacity = currentOpacity === 0 ? 1 : 0;
+  
+  form.style.height = targetHeight + "px";
+  form.style.opacity = targetOpacity;
+  
+  var animationInterval = setInterval(function() {
+    var currentHeight = parseFloat(form.style.height);
+    var currentOpacity = parseFloat(form.style.opacity);
+    
+    if (currentHeight === targetHeight && currentOpacity === targetOpacity) {
+      clearInterval(animationInterval);
+    } else {
+      form.style.height = currentHeight + (targetHeight - currentHeight) * 0.1 + "px";
+      form.style.opacity = currentOpacity + (targetOpacity - currentOpacity) * 0.1;
+    }
+  }, 10);
+}
+
+// $(".message a").click(function () {
+//   $("form").animate({ height: "toggle", opacity: "toggle" }, "slow");
+// });

@@ -1,6 +1,6 @@
 
 // const API_URL = "https://nev-app-messenger.herokuapp.com";
-const API_URL = "https://genciyusifov.github.io/MessengerAppJS/";
+const API_URL = "https://genciyusifov.github.io/MessengerAppJS";
 const registerFormEl = document.querySelector("#register-form");
 registerFormEl.addEventListener("submit", async function (e) {
   e.preventDefault();

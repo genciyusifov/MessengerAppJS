@@ -1,7 +1,7 @@
 
 
-const API_URL = "https://nev-app-messenger.herokuapp.com";
-// const API_URL = "http://localhost:3000";
+// const API_URL = "https://nev-app-messenger.herokuapp.com";
+const API_URL = "https://genciyusifov.github.io/MessengerAppJS/";
 
 // function getRandomNumberBetween(min, max) {
 //   return Math.floor(Math.random() * (max - min + 1) + min);

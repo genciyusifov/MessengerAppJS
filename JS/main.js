@@ -1,6 +1,8 @@
 
 
-const API_URL = "https://limitless-dawn-20327.herokuapp.com/"
+const API_URL = "https://nev-app-messenger.herokuapp.com";
+// const API_URL = "http://localhost:3000";
+
 // function getRandomNumberBetween(min, max) {
 //   return Math.floor(Math.random() * (max - min + 1) + min);
 // }

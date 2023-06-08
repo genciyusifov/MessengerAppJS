@@ -1,5 +1,6 @@
 
-const API_URL = "https://limitless-dawn-20327.herokuapp.com/";
+const API_URL = "https://nev-app-messenger.herokuapp.com";
+// const API_URL = "http://localhost:3000";
 const registerFormEl = document.querySelector("#register-form");
 registerFormEl.addEventListener("submit", async function (e) {
   e.preventDefault();
